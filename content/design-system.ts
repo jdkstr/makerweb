@@ -1,0 +1,153 @@
+export const designSystem = {
+  name: "Makerweb System",
+  summary:
+    "A light paper canvas, Geist Sans, and maker orange as the only accent. Websites are framed as software: consoles, changelogs, and tokens — with grain and gradient reserved for banners.",
+  principles: [
+    {
+      title: "Product first",
+      text: "The website is the product. Show it in a console, not a full-bleed mood film. Specs are interactive, not captions.",
+    },
+    {
+      title: "One accent",
+      text: "Maker orange is primary, hover, and focus. Warm greys carry structure. Gradients never replace the accent.",
+    },
+    {
+      title: "Tight type",
+      text: "Geist, medium weight on headings, negative tracking. Body stays 15px / 1.75 leading.",
+    },
+    {
+      title: "Texture with intent",
+      text: "Grain sits on dusk and ember banners only. Everyday sections stay paper-quiet so the chrome feels like software.",
+    },
+  ],
+  sections: [
+    { id: "principles", label: "Principles" },
+    { id: "color", label: "Color" },
+    { id: "type", label: "Type" },
+    { id: "layout", label: "Layout" },
+    { id: "texture", label: "Texture" },
+    { id: "components", label: "Components" },
+    { id: "patterns", label: "Patterns" },
+  ],
+  colors: [
+    {
+      name: "Maker orange",
+      token: "--maker / --primary",
+      hex: "#d94b1a",
+      className: "bg-primary",
+      invert: true,
+      use: "Buttons, links, focus ring",
+    },
+    {
+      name: "Pressed orange",
+      token: "--maker-dark",
+      hex: "#9a2f0c",
+      className: "bg-maker-dark",
+      invert: true,
+      use: "Pressed / hover mix",
+    },
+    {
+      name: "Soft clay",
+      token: "--maker-soft",
+      hex: "#f4d4c4",
+      className: "bg-maker-soft",
+      invert: false,
+      use: "Gradient stops, chips",
+    },
+    {
+      name: "Ink",
+      token: "--ink / --foreground",
+      hex: "#161615",
+      className: "bg-ink",
+      invert: true,
+      use: "Headings, inverse banners",
+    },
+    {
+      name: "Stone",
+      token: "--stone / --muted-foreground",
+      hex: "#6f6e69",
+      className: "bg-stone",
+      invert: true,
+      use: "Supporting copy",
+    },
+    {
+      name: "Ash",
+      token: "--ash / --border",
+      hex: "#c8c5bb",
+      className: "bg-ash",
+      invert: false,
+      use: "Borders, inputs",
+    },
+    {
+      name: "Haze",
+      token: "--haze / --muted",
+      hex: "#ebe9e3",
+      className: "bg-haze",
+      invert: false,
+      use: "Bands, hover pills",
+    },
+    {
+      name: "Paper",
+      token: "--paper / --background",
+      hex: "#f3f2ee",
+      className: "bg-paper ring-1 ring-border",
+      invert: false,
+      use: "Page canvas",
+    },
+    {
+      name: "Card",
+      token: "--card",
+      hex: "#fafaf7",
+      className: "bg-card ring-1 ring-border",
+      invert: false,
+      use: "Surfaces, menus, forms",
+    },
+  ],
+  type: [
+    {
+      name: "Display",
+      sample: "The system for designing, building, and operating the web.",
+      spec: "Geist medium · 2.35–3.35rem · leading 1.08 · tracking −0.032em",
+      className:
+        "text-[2.35rem] font-medium leading-[1.08] min-[800px]:text-5xl",
+    },
+    {
+      name: "Title",
+      sample: "Marketing that behaves like software",
+      spec: "Geist medium · 1.875–2.25rem",
+      className: "text-3xl font-medium min-[800px]:text-4xl",
+    },
+    {
+      name: "Quote",
+      sample: "They treated the website like a product.",
+      spec: "Geist medium · 1.25–1.35rem · leading snug",
+      className: "text-xl font-medium leading-snug min-[800px]:text-[1.35rem]",
+    },
+    {
+      name: "Body",
+      sample:
+        "Makerweb is a product studio for companies that need a website with the same care as the product it represents.",
+      spec: "Geist regular · 15px · leading 1.75 · tracking −0.011em",
+      className: "text-[15px] leading-7 text-stone",
+    },
+    {
+      name: "UI",
+      sample: "Work  ·  Studio  ·  Start a project",
+      spec: "Geist medium · 13px",
+      className: "text-[13px] font-medium",
+    },
+    {
+      name: "Meta",
+      sample: "Aug 2026  ·  Product studio · Est. 2016",
+      spec: "Geist medium · 11–12px · stone",
+      className: "text-xs font-medium text-stone",
+    },
+  ],
+  space: [
+    { name: "Page width", spec: "90% · max 1340px", token: "container-site" },
+    { name: "Header", spec: "56px", token: "h-14" },
+    { name: "Section", spec: "80–112px vertical", token: "py-20 / py-28" },
+    { name: "Radius", spec: "4–6px", token: "--radius" },
+    { name: "Motion", spec: "cubic-bezier(0.22, 0.61, 0.36, 1)", token: "--ease-maker" },
+  ],
+} as const
