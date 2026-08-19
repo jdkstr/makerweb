@@ -65,7 +65,7 @@ export function SiteHeader() {
             className="w-full max-w-sm gap-0 border-l bg-card p-0 sm:max-w-sm"
           >
             <div className="flex items-center justify-between border-b px-4 py-3">
-              <Logo className="w-[128px] text-foreground" />
+              <Logo className="text-foreground" />
               <SheetClose
                 render={
                   <Button variant="ghost" size="icon" className="rounded-md" />
@@ -188,7 +188,7 @@ export function SiteHeader() {
 
         <Link href="/" className="text-foreground">
           <span className="sr-only">Makerweb</span>
-          <Logo className="w-[128px] min-[900px]:w-[140px]" />
+          <Logo />
         </Link>
 
         <NavigationMenu

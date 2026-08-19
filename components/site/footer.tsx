@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div className="mb-8">
           <Link href="/" className="inline-flex text-foreground">
             <span className="sr-only">Makerweb</span>
-            <Logo className="w-[148px]" />
+            <Logo />
           </Link>
           <p className="mt-3 max-w-sm text-[15px] leading-7 text-stone">
             {site.tagline} A product studio for companies that need the web to

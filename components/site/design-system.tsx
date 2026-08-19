@@ -193,12 +193,12 @@ export function DesignSystemPage() {
           <div>
             <p className="mb-3 text-xs font-medium text-stone">Logo</p>
             <div className="flex flex-wrap items-center gap-8">
-              <Logo className="w-[148px] text-foreground" />
-              <div className="rounded-md bg-primary px-5 py-4">
-                <Logo className="w-[148px] text-primary-foreground" />
+              <Logo className="text-foreground" />
+              <div className="rounded-md bg-primary px-5 py-4 text-primary-foreground">
+                <Logo />
               </div>
-              <div className="rounded-md bg-ink px-5 py-4">
-                <Logo className="w-[148px] text-paper" />
+              <div className="rounded-md bg-ink px-5 py-4 text-paper">
+                <Logo />
               </div>
             </div>
           </div>
