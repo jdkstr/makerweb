@@ -2,7 +2,7 @@
 
 Next.js + shadcn site for [Makerweb](https://makerweb.framer.website) — a hybrid web agency for makers and manufacturers.
 
-Tokens are sampled from the live Framer site: void `#141413`, flame `#FF5010`, sun `#FFDD29`, lagoon `#2AA1B1`, reef `#167D7F`. Type is Instrument Sans (the family already on the Framer site). Radius is `0`.
+Tokens are sampled from the live Framer site: void `#141413`, flame `#FF5010`, sun `#FFDD29`, lagoon `#2AA1B1`, reef `#167D7F`. Type is Instrument Sans. Layout follows a modern SaaS marketing pattern (centered hero, product chrome, logo marquee, bento features).
 
 | URL | Page |
 | --- | --- |

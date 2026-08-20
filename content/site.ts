@@ -8,10 +8,30 @@ export const site = {
     { label: "About", href: "/about" },
   ],
   hero: {
+    eyebrow: "Web agency for Makers",
     headline: "Digital agency for makers",
     text: "Building better digital experiences for physical and digital makers.",
     primary: { label: "Contact us", href: "/contact" },
     secondary: { label: "See our work", href: "/#makers" },
+  },
+  principles: [
+    {
+      title: "Simplicity",
+      text: "Lean, clean stacks. We ship an MVP instead of a strategy deck.",
+    },
+    {
+      title: "Versatility",
+      text: "Websites, apps, brand, analytics and automation on one programme.",
+    },
+    {
+      title: "Effectiveness",
+      text: "Designed for conversion, then iterated from real user feedback.",
+    },
+  ],
+  studio: {
+    kicker: "Makerweb Studio",
+    title: "The workspace we run every programme from",
+    text: "Sites, apps, automations and brand — one lean stack for makers and manufacturers.",
   },
   trust: {
     kicker: "Inspired by global makers",

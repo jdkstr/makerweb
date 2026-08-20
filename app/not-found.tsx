@@ -19,8 +19,8 @@ export default function NotFound() {
           <Link
             href="/"
             className={cn(
-              buttonVariants({ variant: "makerWhite", size: "lg" }),
-              "h-12 px-6"
+              buttonVariants({ variant: "maker", size: "lg" }),
+              "h-12 px-7"
             )}
           >
             Back to homepage

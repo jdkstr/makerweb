@@ -7,6 +7,7 @@ import { Container } from "@/components/site/container"
 import { DesignSystemDemos } from "@/components/site/design-system-demos"
 import { GrainBanner } from "@/components/site/grain"
 import { Logo } from "@/components/site/logo"
+import { ProductCanvas } from "@/components/site/product-canvas"
 import { cn } from "@/lib/utils"
 import { designSystem } from "@/content/design-system"
 
@@ -25,7 +26,7 @@ function Section({
       className="scroll-mt-20 border-b border-white/10 py-16 min-[800px]:py-24"
     >
       <Container>
-        <h2 className="mb-10 text-3xl font-semibold min-[800px]:text-4xl">
+        <h2 className="mb-10 text-3xl font-semibold tracking-tight min-[800px]:text-4xl">
           {title}
         </h2>
         {children}
@@ -45,7 +46,7 @@ export function DesignSystemPage() {
           <p className="mb-3 font-mono text-xs tracking-[0.18em] text-flame uppercase">
             {name}
           </p>
-          <h1 className="max-w-2xl text-4xl font-semibold leading-[0.95] min-[800px]:text-6xl">
+          <h1 className="max-w-2xl text-4xl font-semibold tracking-tight min-[800px]:text-6xl">
             Design system
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/65">
@@ -88,7 +89,7 @@ export function DesignSystemPage() {
             <li key={color.hex + color.name}>
               <div
                 className={cn(
-                  "flex h-20 items-end p-2.5 font-mono text-[11px]",
+                  "flex h-20 items-end rounded-xl p-2.5 font-mono text-[11px]",
                   color.className,
                   color.invert ? "text-white" : "text-void"
                 )}
@@ -144,26 +145,26 @@ export function DesignSystemPage() {
 
       <Section id="texture" title="Texture">
         <p className="mb-8 max-w-lg text-[15px] leading-7 text-white/65">
-          Grain sits on flame, lagoon, and sun banners. Everyday sections stay
-          flat void.
+          Soft radial glows sit behind the hero and product frame. Grain is
+          optional on banners.
         </p>
-        <div className="grid gap-px bg-white/10 min-[800px]:grid-cols-3">
-          <GrainBanner variant="flame">
+        <div className="grid gap-3 min-[800px]:grid-cols-3">
+          <GrainBanner variant="flame" className="rounded-2xl">
             <div className="p-6">
               <p className="font-mono text-xs text-white/70">Flame</p>
-              <p className="mt-2 text-lg font-semibold">Hero / close</p>
+              <p className="mt-2 text-lg font-semibold">Hero glow</p>
             </div>
           </GrainBanner>
-          <GrainBanner variant="lagoon">
+          <GrainBanner variant="lagoon" className="rounded-2xl">
             <div className="p-6">
               <p className="font-mono text-xs text-white/70">Lagoon</p>
-              <p className="mt-2 text-lg font-semibold">Process accent</p>
+              <p className="mt-2 text-lg font-semibold">Product accent</p>
             </div>
           </GrainBanner>
-          <GrainBanner variant="sun">
+          <GrainBanner variant="sun" className="rounded-2xl">
             <div className="p-6">
               <p className="font-mono text-xs text-white/70">Sun</p>
-              <p className="mt-2 text-lg font-semibold">About band</p>
+              <p className="mt-2 text-lg font-semibold">Status chip</p>
             </div>
           </GrainBanner>
         </div>
@@ -188,8 +189,8 @@ export function DesignSystemPage() {
           <div>
             <p className="mb-3 font-mono text-xs text-steel">Buttons</p>
             <p className="mb-4 max-w-lg text-[15px] leading-7 text-white/65">
-              Sharp rectangles. Orange for contact, white for secondary, black
-              on the header bar.
+              Pills. Flame for contact, ghost for secondary, white when you need
+              contrast on a dark band.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
@@ -204,7 +205,7 @@ export function DesignSystemPage() {
               <Link
                 href="/#makers"
                 className={cn(
-                  buttonVariants({ variant: "makerWhite", size: "lg" }),
+                  buttonVariants({ variant: "makerGhost", size: "lg" }),
                   "h-12 px-6"
                 )}
               >
@@ -213,13 +214,17 @@ export function DesignSystemPage() {
               <Link
                 href="/contact"
                 className={cn(
-                  buttonVariants({ variant: "makerInk", size: "lg" }),
+                  buttonVariants({ variant: "makerWhite", size: "lg" }),
                   "h-12 px-6"
                 )}
               >
-                Contact us
+                Work with us
               </Link>
             </div>
+          </div>
+          <div>
+            <p className="mb-3 font-mono text-xs text-steel">Product chrome</p>
+            <ProductCanvas />
           </div>
           <DesignSystemDemos />
         </div>
@@ -233,7 +238,7 @@ export function DesignSystemPage() {
             <code className="text-white/70">app/globals.css</code>. Copy:{" "}
             <code className="text-white/70">content/site.ts</code>. Inventory:{" "}
             <code className="text-white/70">content/design-system.ts</code>.
-            Source: makerweb.framer.website.
+            Source: makerweb.framer.website. Layout: attio.com.
           </p>
         </Container>
       </section>

@@ -15,9 +15,9 @@ export function DesignSystemDemos() {
     <div className="space-y-10">
       <div>
         <p className="mb-3 font-mono text-xs text-steel">Accordion</p>
-        <Accordion className="max-w-md border border-white/10 px-3">
+        <Accordion className="max-w-md overflow-hidden rounded-xl border border-white/10 px-3">
           <AccordionItem value="services">
-            <AccordionTrigger className="rounded-none text-[15px] hover:no-underline">
+            <AccordionTrigger className="text-[15px] hover:no-underline">
               Services
             </AccordionTrigger>
             <AccordionContent className="text-sm text-white/65">
@@ -25,7 +25,7 @@ export function DesignSystemDemos() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="process">
-            <AccordionTrigger className="rounded-none text-[15px] hover:no-underline">
+            <AccordionTrigger className="text-[15px] hover:no-underline">
               Process
             </AccordionTrigger>
             <AccordionContent className="text-sm text-white/65">
@@ -42,7 +42,7 @@ export function DesignSystemDemos() {
             id="ds-email"
             type="email"
             placeholder="name@company.com"
-            className="h-11 rounded-none bg-raise"
+            className="h-11 rounded-lg bg-raise"
           />
         </div>
         <Button type="button" variant="maker" className="mt-4 h-11 px-6">
