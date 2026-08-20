@@ -1,23 +1,23 @@
 export const designSystem = {
   name: "Makerweb System",
   summary:
-    "Sampled from makerweb.framer.website: charcoal void, flame orange, a four-square mark, Instrument Sans, and zero radius. An agency canvas — not a SaaS product console.",
+    "Makerweb color and type on an Attio-style SaaS canvas: dark glass nav, centered hero, product chrome, logo marquee, and bento features.",
   principles: [
     {
-      title: "Dark first",
-      text: "The page is void #141413. Surfaces raise to #272525. White is reserved for the header bar, type, and the secondary button.",
+      title: "Dark product canvas",
+      text: "Void #141413 is the page. Surfaces raise with hairline borders and a soft inner highlight — closer to a product marketing site than a poster.",
     },
     {
       title: "Flame, not terracotta",
       text: "Primary is #FF5010. The mark also carries sun #FFDD29, lagoon #2AA1B1, and reef #167D7F. Grey #808080 is for industrial logos only.",
     },
     {
-      title: "Sharp chrome",
-      text: "Radius is 0. Buttons are rectangles. The logo tiles are the only 2px exception.",
+      title: "Tight SaaS chrome",
+      text: "Cards sit at 18px. CTAs are pills. Logo tiles stay 2px. Radius is modest on purpose — not blob-shaped, not zero.",
     },
     {
       title: "Instrument, not Geist",
-      text: "Headings and body are Instrument Sans — the family already on the Framer site (Rawest is display-only and not licensed here). Fragment Mono labels the system.",
+      text: "Headings and body are Instrument Sans. Fragment Mono labels the system. Display is large, centered, and tightly tracked.",
     },
   ],
   sections: [
@@ -35,7 +35,7 @@ export const designSystem = {
       hex: "#ff5010",
       className: "bg-flame",
       invert: true,
-      use: "Primary buttons, links, mark tile",
+      use: "Primary pills, live status, mark tile",
     },
     {
       name: "Flame hot",
@@ -51,7 +51,7 @@ export const designSystem = {
       hex: "#ffdd29",
       className: "bg-sun",
       invert: false,
-      use: "Mark tile, service accents",
+      use: "Mark tile, iterate status",
     },
     {
       name: "Lagoon",
@@ -59,7 +59,7 @@ export const designSystem = {
       hex: "#2aa1b1",
       className: "bg-lagoon",
       invert: true,
-      use: "Mark tile, chips",
+      use: "Mark tile, live status",
     },
     {
       name: "Reef",
@@ -83,7 +83,7 @@ export const designSystem = {
       hex: "#272525",
       className: "bg-raise",
       invert: true,
-      use: "Cards, FAQ, forms",
+      use: "Cards, studio chrome",
     },
     {
       name: "Steel",
@@ -91,7 +91,7 @@ export const designSystem = {
       hex: "#808080",
       className: "bg-steel",
       invert: true,
-      use: "Client logos, meta",
+      use: "Logo marquee, meta",
     },
     {
       name: "White",
@@ -99,47 +99,47 @@ export const designSystem = {
       hex: "#ffffff",
       className: "bg-white",
       invert: false,
-      use: "Type, header bar, secondary button",
+      use: "Type, secondary CTA",
     },
   ],
   type: [
     {
       name: "Display",
       sample: "Digital agency for makers",
-      spec: "Instrument Sans · 600 · 3–4.5rem · tracking −0.03em",
+      spec: "Instrument Sans · 600 · 3–5.25rem · tracking tight · centered",
       className:
-        "text-5xl font-semibold leading-[0.95] min-[800px]:text-7xl",
+        "text-5xl font-semibold tracking-tight min-[800px]:text-7xl",
     },
     {
       name: "Title",
       sample: "Creating delightful experiences",
-      spec: "Instrument Sans · 600 · 2–2.75rem",
-      className: "text-3xl font-semibold min-[800px]:text-5xl",
+      spec: "Instrument Sans · 600 · 2–3rem",
+      className: "text-3xl font-semibold tracking-tight min-[800px]:text-5xl",
     },
     {
       name: "Body",
       sample:
         "Building better digital experiences for physical and digital makers.",
-      spec: "Instrument Sans · 400 · 16–18px · leading 1.7",
-      className: "text-base leading-7 text-white/70",
+      spec: "Instrument Sans · 400 · 16–18px · leading 1.7 · white/60",
+      className: "text-base leading-7 text-white/60",
     },
     {
       name: "UI",
       sample: "Services  ·  Process  ·  About  ·  Contact us",
-      spec: "Instrument Sans · 500 · 14px",
+      spec: "Instrument Sans · 500 · 14px · pill nav",
       className: "text-sm font-medium",
     },
     {
       name: "Meta",
       sample: "01  ·  Project Brief  ·  Inspired by global makers",
-      spec: "Fragment Mono · 12px · steel",
+      spec: "Fragment Mono · 11px · uppercase pill",
       className: "font-mono text-xs tracking-wide text-steel",
     },
   ],
   space: [
-    { name: "Page width", spec: "min(90%, 1280px)", token: "container-site" },
-    { name: "Header", spec: "White bar · 64px", token: "h-16" },
+    { name: "Page width", spec: "min(92%, 1120px)", token: "container-site" },
+    { name: "Header", spec: "Glass · 68px", token: "h-[4.25rem]" },
     { name: "Section", spec: "96–128px vertical", token: "py-24 / py-32" },
-    { name: "Radius", spec: "0px (tiles 2px)", token: "--radius" },
+    { name: "Radius", spec: "10–18px cards · pills · tiles 2px", token: "--radius" },
   ],
 } as const

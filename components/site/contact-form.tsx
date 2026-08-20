@@ -16,7 +16,7 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <p className="border border-white/15 bg-raise p-6 text-[15px] leading-7">
+      <p className="rounded-xl border border-white/15 bg-raise p-6 text-[15px] leading-7">
         Thanks. We’ll reply within two working days.
       </p>
     )
@@ -36,7 +36,7 @@ export function ContactForm() {
           name="message"
           required
           rows={6}
-          className="w-full rounded-none border border-input bg-raise px-2.5 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="w-full rounded-lg border border-input bg-raise px-2.5 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
       <Button type="submit" variant="maker" className="h-12 px-6">
@@ -68,7 +68,7 @@ function Field({
         type={type}
         autoComplete={autoComplete}
         required={required}
-        className="h-11 rounded-none bg-raise"
+        className="h-11 rounded-lg bg-raise"
       />
     </div>
   )

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 import { Container } from "@/components/site/container"
 import { ContactForm } from "@/components/site/contact-form"
-import { GrainBanner } from "@/components/site/grain"
+import { PageHero } from "@/components/site/page-hero"
 import { site } from "@/content/site"
 
 export const metadata: Metadata = {
@@ -14,33 +14,24 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main id="main-content" className="flex-1 bg-void">
-      <section className="border-b border-white/10 py-16 min-[800px]:py-24">
-        <Container className="grid gap-12 min-[900px]:grid-cols-2">
+      <PageHero
+        kicker="Contact"
+        title={site.contact.headline}
+        text={site.contact.text}
+      />
+      <section className="py-16 min-[800px]:py-24">
+        <Container className="grid gap-12 min-[900px]:grid-cols-[0.9fr_1.1fr] min-[900px]:items-start">
           <div>
-            <p className="mb-3 font-mono text-xs tracking-[0.18em] text-flame uppercase">
-              Contact
+            <p className="text-sm leading-6 text-white/50">{site.footer.locations}</p>
+            <p className="mt-6 text-lg font-semibold tracking-tight">
+              Simplicity, versatility & effectiveness.
             </p>
-            <h1 className="max-w-xl text-4xl font-semibold leading-[0.95] min-[800px]:text-6xl">
-              {site.contact.headline}
-            </h1>
-            <p className="mt-6 max-w-lg text-[15px] leading-7 text-white/65">
-              {site.contact.text}
-            </p>
-            <p className="mt-8 text-sm text-steel">{site.footer.locations}</p>
           </div>
-          <ContactForm />
+          <div className="surface-card p-6 min-[800px]:p-8">
+            <ContactForm />
+          </div>
         </Container>
       </section>
-      <GrainBanner variant="flame">
-        <Container className="py-14">
-          <p className="font-mono text-xs tracking-[0.18em] text-white/60 uppercase">
-            Makers for makers
-          </p>
-          <p className="mt-3 max-w-xl text-xl font-semibold leading-snug">
-            Simplicity, versatility & effectiveness.
-          </p>
-        </Container>
-      </GrainBanner>
     </main>
   )
 }

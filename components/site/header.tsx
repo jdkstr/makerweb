@@ -17,15 +17,16 @@ import { site } from "@/content/site"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 bg-white text-void">
-      <div className="container-site flex h-16 items-center">
+    <header className="sticky top-0 z-40">
+      <div className="absolute inset-0 border-b border-white/8 bg-void/70 backdrop-blur-xl" />
+      <div className="container-site relative flex h-[4.25rem] items-center">
         <Sheet>
           <SheetTrigger
             render={
               <Button
                 variant="ghost"
                 size="icon"
-                className="mr-2 rounded-none text-void hover:bg-black/5 min-[800px]:hidden"
+                className="mr-1 rounded-full text-white hover:bg-white/8 min-[860px]:hidden"
               />
             }
           >
@@ -35,16 +36,16 @@ export function SiteHeader() {
           <SheetContent
             side="right"
             showCloseButton={false}
-            className="w-full max-w-sm gap-0 rounded-none border-l border-black/10 bg-white p-0 text-void sm:max-w-sm"
+            className="w-full max-w-sm gap-0 rounded-none border-l border-white/10 bg-void p-0 text-white sm:max-w-sm"
           >
-            <div className="flex items-center justify-between border-b border-black/10 px-4 py-3">
-              <Logo inverted />
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <Logo />
               <SheetClose
                 render={
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="rounded-none text-void"
+                    className="rounded-full text-white"
                   />
                 }
               >
@@ -60,7 +61,7 @@ export function SiteHeader() {
                   render={
                     <Link
                       href={item.href}
-                      className="px-1 py-3 text-base font-medium"
+                      className="rounded-lg px-2 py-3 text-base font-medium"
                     />
                   }
                 >
@@ -74,7 +75,7 @@ export function SiteHeader() {
                   <Link
                     href="/contact"
                     className={cn(
-                      buttonVariants({ variant: "makerInk", size: "lg" }),
+                      buttonVariants({ variant: "maker", size: "lg" }),
                       "h-11 w-full px-5"
                     )}
                   />
@@ -86,32 +87,43 @@ export function SiteHeader() {
           </SheetContent>
         </Sheet>
 
-        <Link href="/" className="text-void">
+        <Link href="/" className="text-white">
           <span className="sr-only">Makerweb</span>
-          <Logo inverted />
+          <Logo />
         </Link>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 min-[800px]:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 min-[860px]:flex">
           {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-void hover:text-flame"
+              className="rounded-full px-3.5 py-1.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/6 hover:text-white"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <Link
-          href="/contact"
-          className={cn(
-            buttonVariants({ variant: "makerInk", size: "sm" }),
-            "ml-auto h-10 px-4 text-sm"
-          )}
-        >
-          Contact us
-        </Link>
+        <div className="ml-auto flex items-center gap-2">
+          <Link
+            href="/#makers"
+            className={cn(
+              buttonVariants({ variant: "makerGhost", size: "sm" }),
+              "hidden h-9 px-3.5 text-sm min-[860px]:inline-flex"
+            )}
+          >
+            See our work
+          </Link>
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "maker", size: "sm" }),
+              "h-9 px-4 text-sm"
+            )}
+          >
+            Contact us
+          </Link>
+        </div>
       </div>
     </header>
   )

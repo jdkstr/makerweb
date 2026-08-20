@@ -1,7 +1,11 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+import { buttonVariants } from "@/components/ui/button"
 import { Container } from "@/components/site/container"
+import { LogoMarquee } from "@/components/site/logo-marquee"
+import { PageHero } from "@/components/site/page-hero"
+import { cn } from "@/lib/utils"
 import { site } from "@/content/site"
 
 export const metadata: Metadata = {
@@ -12,24 +16,21 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main id="main-content" className="flex-1 bg-void">
+      <PageHero
+        kicker={site.trust.kicker}
+        title="See our work"
+        text="Websites, brands, apps and automation for makers and manufacturers — built to convert, then iterated."
+      />
+      <LogoMarquee />
       <section className="py-16 min-[800px]:py-24">
-        <Container>
-          <p className="mb-3 font-mono text-xs tracking-[0.18em] text-steel uppercase">
-            {site.trust.kicker}
-          </p>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] min-[800px]:text-6xl">
-            See our work
-          </h1>
-          <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/65">
-            Websites, brands, apps and automation for makers and manufacturers —
-            built to convert, then iterated.
-          </p>
-          <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-4 text-2xl font-semibold text-steel">
-            {site.trust.names.map((name) => (
-              <li key={name}>{name}</li>
-            ))}
-          </ul>
-          <Link href="/contact" className="mt-12 inline-block text-flame hover:underline">
+        <Container className="text-center">
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "maker", size: "lg" }),
+              "h-12 px-7"
+            )}
+          >
             Contact us
           </Link>
         </Container>
