@@ -8,24 +8,24 @@ export function Grain({ className }: { className?: string }) {
 
 export function GrainBanner({
   className,
-  variant = "dusk",
+  variant = "flame",
   children,
 }: {
   className?: string
-  variant?: "dusk" | "ember" | "ink"
+  variant?: "flame" | "lagoon" | "sun"
   children: ReactNode
 }) {
   return (
     <div
       className={cn(
         "relative overflow-hidden",
-        variant === "dusk" && "gradient-dusk text-paper",
-        variant === "ember" && "gradient-ember text-ink",
-        variant === "ink" && "gradient-ink text-paper",
+        variant === "flame" && "gradient-flame",
+        variant === "lagoon" && "gradient-lagoon",
+        variant === "sun" && "gradient-sun",
         className
       )}
     >
-      <Grain className={variant === "ember" ? "opacity-30" : undefined} />
+      <Grain />
       <div className="relative">{children}</div>
     </div>
   )

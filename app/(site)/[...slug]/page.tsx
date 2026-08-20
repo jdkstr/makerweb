@@ -37,22 +37,20 @@ export default async function StubPage({ params }: PageProps) {
   if (!title) notFound()
 
   return (
-    <main id="main-content" className="flex-1 bg-paper">
+    <main id="main-content" className="flex-1 bg-void">
       <Container className="py-16 md:py-24">
-        <p className="mb-3 text-sm font-medium text-primary">Studio note</p>
-        <h1 className="mb-4 text-[2rem] font-medium leading-tight md:text-[2.875rem]">
-          {title}
-        </h1>
-        <p className="mb-8 max-w-2xl text-[15px] leading-7 text-stone">
-          This page is a stub so the chrome can be clicked through. The
-          homepage, work, services, process, studio, journal, and design system
-          are fully designed.
+        <p className="mb-3 font-mono text-xs tracking-wide text-flame uppercase">
+          Makerweb
+        </p>
+        <h1 className="mb-4 text-4xl font-semibold">{title}</h1>
+        <p className="mb-8 max-w-2xl text-[15px] leading-7 text-white/65">
+          This inner page is a stub so the chrome can be clicked through.
         </p>
         <Link
           href="/"
           className={cn(
-            buttonVariants({ variant: "makerOutline", size: "lg" }),
-            "h-10 rounded-sm px-5 text-sm"
+            buttonVariants({ variant: "makerWhite", size: "lg" }),
+            "h-12 px-6"
           )}
         >
           Back to homepage
