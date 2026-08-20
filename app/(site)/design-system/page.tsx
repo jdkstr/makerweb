@@ -5,7 +5,7 @@ import { DesignSystemPage } from "@/components/site/design-system"
 export const metadata: Metadata = {
   title: "Design system",
   description:
-    "Tokens, type, texture, and components for Makerweb: paper canvas, Geist Sans, maker orange, grain on banners.",
+    "Void, flame, Instrument Sans, and zero radius — sampled from makerweb.framer.website.",
 }
 
 export default function Page() {

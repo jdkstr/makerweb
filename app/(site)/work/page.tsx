@@ -2,47 +2,36 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 import { Container } from "@/components/site/container"
-import { WorkCard } from "@/components/site/work-card"
 import { site } from "@/content/site"
 
 export const metadata: Metadata = {
   title: "Work",
-  description:
-    "Selected Makerweb programmes — product websites, brand systems, and design engineering.",
+  description: "Inspired by global makers.",
 }
 
 export default function Page() {
   return (
-    <main id="main-content" className="flex-1 bg-paper">
-      <section className="border-b border-ash py-16 min-[800px]:py-24">
-        <Container>
-          <p className="mb-3 text-xs font-medium text-primary">Work</p>
-          <h1 className="max-w-2xl text-[2.35rem] font-medium leading-[1.08] min-[800px]:text-5xl">
-            Programmes worth talking about.
-          </h1>
-          <p className="mt-5 max-w-xl text-[15px] leading-7 text-stone">
-            Websites treated as products. Each engagement is strategy,
-            interface, and engineering on one backlog — then a system the
-            internal team can keep shipping.
-          </p>
-        </Container>
-      </section>
+    <main id="main-content" className="flex-1 bg-void">
       <section className="py-16 min-[800px]:py-24">
         <Container>
-          <ul className="grid gap-14 min-[800px]:grid-cols-2">
-            {site.work.map((item) => (
-              <li key={item.slug}>
-                <WorkCard work={item} />
-              </li>
+          <p className="mb-3 font-mono text-xs tracking-[0.18em] text-steel uppercase">
+            {site.trust.kicker}
+          </p>
+          <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] min-[800px]:text-6xl">
+            See our work
+          </h1>
+          <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/65">
+            Websites, brands, apps and automation for makers and manufacturers —
+            built to convert, then iterated.
+          </p>
+          <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-4 text-2xl font-semibold text-steel">
+            {site.trust.names.map((name) => (
+              <li key={name}>{name}</li>
             ))}
           </ul>
-          <p className="mt-16 max-w-lg text-[15px] leading-7 text-stone">
-            Want the next one listed here?{" "}
-            <Link href="/contact" className="font-medium text-primary hover:underline">
-              Start a programme
-            </Link>
-            .
-          </p>
+          <Link href="/contact" className="mt-12 inline-block text-flame hover:underline">
+            Contact us
+          </Link>
         </Container>
       </section>
     </main>

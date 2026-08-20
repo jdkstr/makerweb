@@ -1,26 +1,26 @@
 import { cn } from "@/lib/utils"
 
-export function Logo({ className }: { className?: string }) {
+export function Logo({
+  className,
+  inverted = false,
+}: {
+  className?: string
+  inverted?: boolean
+}) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-[15px] font-medium tracking-tight",
+        "inline-flex items-center gap-2.5 text-[17px] font-semibold tracking-tight",
+        inverted ? "text-void" : "text-white",
         className
       )}
     >
-        <svg
-        viewBox="0 0 28 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="size-6 shrink-0"
-        aria-hidden
-      >
-        <path
-          fill="currentColor"
-          fillRule="evenodd"
-          d="M4 0h20a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4Zm2 5h7v18H6V5Zm9 6h7v12h-7V11Z"
-        />
-      </svg>
+      <span className="grid size-6 grid-cols-2 gap-0.5" aria-hidden>
+        <span className="rounded-[2px] bg-flame" />
+        <span className="rounded-[2px] bg-sun" />
+        <span className="rounded-[2px] bg-lagoon" />
+        <span className="rounded-[2px] bg-reef" />
+      </span>
       Makerweb
     </span>
   )

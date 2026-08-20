@@ -8,21 +8,19 @@ import { cn } from "@/lib/utils"
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-full flex-1 flex-col bg-paper">
+    <div className="flex min-h-full flex-1 flex-col bg-void">
       <SiteHeader />
-      <main id="main-content" className="flex-1 bg-paper">
+      <main id="main-content" className="flex-1 bg-void">
         <Container className="py-16 md:py-24">
-          <h1 className="mb-4 text-[2rem] font-medium md:text-[2.875rem]">
-            Page not found
-          </h1>
-          <p className="mb-8 max-w-xl text-stone">
+          <h1 className="mb-4 text-4xl font-semibold">Page not found</h1>
+          <p className="mb-8 max-w-xl text-white/65">
             This route is not part of the Makerweb site.
           </p>
           <Link
             href="/"
             className={cn(
-              buttonVariants({ variant: "makerOutline", size: "lg" }),
-              "h-10 rounded-sm px-5 text-sm"
+              buttonVariants({ variant: "makerWhite", size: "lg" }),
+              "h-12 px-6"
             )}
           >
             Back to homepage
