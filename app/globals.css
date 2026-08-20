@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist);
+  --font-heading: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-maker: var(--maker);
+  --color-maker-dark: var(--maker-dark);
+  --color-maker-soft: var(--maker-soft);
+  --color-haze: var(--haze);
+  --color-mist: var(--mist);
+  --color-stone: var(--stone);
+  --color-ash: var(--ash);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: var(--radius);
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --ease-maker: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --max-width-site: 1340px;
+}
+
+:root {
+  --paper: #f3f2ee;
+  --ink: #161615;
+  --maker: #d94b1a;
+  --maker-dark: #9a2f0c;
+  --maker-soft: #f4d4c4;
+  --haze: #ebe9e3;
+  --mist: #e2e0d8;
+  --stone: #6f6e69;
+  --ash: #c8c5bb;
+  --background: #f3f2ee;
+  --foreground: #161615;
+  --card: #fafaf7;
+  --card-foreground: #161615;
+  --popover: #fafaf7;
+  --popover-foreground: #161615;
+  --primary: #d94b1a;
+  --primary-foreground: #fffaf6;
+  --secondary: #ebe9e3;
+  --secondary-foreground: #161615;
+  --muted: #ebe9e3;
+  --muted-foreground: #6f6e69;
+  --accent: #ebe9e3;
+  --accent-foreground: #161615;
+  --destructive: #d94b1a;
+  --border: #c8c5bb;
+  --input: #c8c5bb;
+  --ring: #d94b1a;
+  --chart-1: #d94b1a;
+  --chart-2: #161615;
+  --chart-3: #6f6e69;
+  --chart-4: #c8c5bb;
+  --chart-5: #f4d4c4;
+  --radius: 6px;
+  --sidebar: #ebe9e3;
+  --sidebar-foreground: #161615;
+  --sidebar-primary: #d94b1a;
+  --sidebar-primary-foreground: #fffaf6;
+  --sidebar-accent: #fafaf7;
+  --sidebar-accent-foreground: #161615;
+  --sidebar-border: #c8c5bb;
+  --sidebar-ring: #d94b1a;
+}
+
+.dark {
+  --background: #f3f2ee;
+  --foreground: #161615;
+  --card: #fafaf7;
+  --card-foreground: #161615;
+  --popover: #fafaf7;
+  --popover-foreground: #161615;
+  --primary: #d94b1a;
+  --primary-foreground: #fffaf6;
+  --secondary: #ebe9e3;
+  --secondary-foreground: #161615;
+  --muted: #ebe9e3;
+  --muted-foreground: #6f6e69;
+  --accent: #ebe9e3;
+  --accent-foreground: #161615;
+  --destructive: #d94b1a;
+  --border: #c8c5bb;
+  --input: #c8c5bb;
+  --ring: #d94b1a;
+  --sidebar: #ebe9e3;
+  --sidebar-foreground: #161615;
+  --sidebar-primary: #d94b1a;
+  --sidebar-primary-foreground: #fffaf6;
+  --sidebar-accent: #fafaf7;
+  --sidebar-accent-foreground: #161615;
+  --sidebar-border: #c8c5bb;
+  --sidebar-ring: #d94b1a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply bg-paper font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    letter-spacing: -0.011em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.032em;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@utility container-site {
+  margin-inline: auto;
+  width: 90%;
+  max-width: 1340px;
+}
+
+.grain-layer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+
+.gradient-dusk {
+  background:
+    radial-gradient(120% 80% at 12% 0%, rgba(244, 212, 196, 0.7) 0%, transparent 55%),
+    radial-gradient(90% 70% at 92% 18%, rgba(217, 75, 26, 0.55) 0%, transparent 48%),
+    radial-gradient(70% 90% at 50% 110%, rgba(22, 22, 21, 0.45) 0%, transparent 50%),
+    linear-gradient(160deg, #2a2420 0%, #161615 48%, #3b2218 100%);
+}
+
+.gradient-ember {
+  background:
+    radial-gradient(80% 70% at 0% 50%, rgba(217, 75, 26, 0.35) 0%, transparent 55%),
+    radial-gradient(70% 80% at 100% 0%, rgba(244, 212, 196, 0.55) 0%, transparent 45%),
+    linear-gradient(135deg, #f3f2ee 0%, #f4d4c4 42%, #ebe9e3 100%);
+}
+
+.gradient-ink {
+  background:
+    radial-gradient(90% 80% at 80% 0%, rgba(217, 75, 26, 0.38) 0%, transparent 50%),
+    radial-gradient(70% 60% at 10% 100%, rgba(244, 212, 196, 0.18) 0%, transparent 50%),
+    linear-gradient(180deg, #1c1b19 0%, #161615 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
